@@ -46,16 +46,16 @@ delete a tenant
 move a tenant from one property to another subject to capacity restriction
 change the rental rate of a property
 
-**Unit Tests
-GraphQL
-Security
+**Unit Tests,
+GraphQL,
+Security,
 AOP**
 
-**Spring Boot
-Spring Data JPA
-Spring Web MVC (for the controller funcitonality)
-Spring Security
-Spring GraphQL
-Spring Security
-H2 for an embedded database
+**Spring Boot,
+Spring Data JPA,
+Spring Web MVC (for the controller funcitonality),
+Spring Security,
+Spring GraphQL,
+Spring Security,
+H2 for an embedded database,
 Maven**
