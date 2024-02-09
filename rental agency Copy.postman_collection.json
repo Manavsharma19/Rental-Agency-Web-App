@@ -1,0 +1,565 @@
+{
+	"info": {
+		"_postman_id": "0d90264e-3388-43fe-b6e6-7e253cc42cd0",
+		"name": "rental agency Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27012684",
+		"_collection_link": "https://speeding-flare-763794.postman.co/workspace/yogesh~91e136d7-b2d9-4fa9-b121-aa61260323ca/collection/27012684-0d90264e-3388-43fe-b6e6-7e253cc42cd0?action=share&source=collection_link&creator=27012684"
+	},
+	"item": [
+		{
+			"name": "add property",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MjI1OCwiZXhwIjoxNzAyNDgyODU4fQ.iu6bznpJz19yMohQHamRXspMhzL3EwI5OVMKJasTBCqYFJpLtCp56ZEykKxb2xs6vnUo4pbfU00LHZqKQu1aLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"address\": \"12wws3 Mainw Stsreet tesdt\",\n  \"eirCode\": \"D120C40\",\n  \"capacity\": 5,\n  \"rentalCost\": 1200.00,\n  \"tenants\": [\n    {\n      \"name\": \"John Doe\",\n      \"email\": \"johenddowe@exasmple.com\",\n      \"phoneNumber\": \"1230078090\"\n    },\n    {\n      \"name\": \"Jane Doe\",\n      \"email\": \"janecdsdoe1@rtexwample.com\",\n      \"phoneNumber\": \"9806040010\"\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/properties/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"properties",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a property given its id, along with the number of tenants currently in that house",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MzM0MSwiZXhwIjoxNzAyNDgzOTQxfQ.AmNa8S89zbWY5ExITUtzikgFrFBd8PkicxBoD-Kk1MQWkqV6meskp6JiRdrjW-McOlvYS5_sPwIra78pmclPyQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/properties/id/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"properties",
+						"id",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a list of properties that have availability in them (excluding tenants)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4NDQxMCwiZXhwIjoxNzAyNDg1MDEwfQ.j8Kvj-NQxqMxcmjk0iMNYVixQvZEK63jAiIq820FXHhytl1GuwU-144Fi-zPxtRPoK8XMJmuuRbbZydVDYWB-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/properties/available",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"properties",
+						"available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a list of all properties (excluding the tenants in that property)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/properties",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a tenant given their id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MzM0MSwiZXhwIjoxNzAyNDgzOTQxfQ.AmNa8S89zbWY5ExITUtzikgFrFBd8PkicxBoD-Kk1MQWkqV6meskp6JiRdrjW-McOlvYS5_sPwIra78pmclPyQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/tenants/tenant12@example.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tenants",
+						"tenant12@example.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a list of tenants in a property give its id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvZmZpY2VAZ21haWwuY29tIiwiaWF0IjoxNzAyNDgxODE5LCJleHAiOjE3MDI0ODI0MTl9.HRbwZau0sCs_lfMAlUxhsQyszjizsCxQ4_SVDNIJtqBOtD60-nl2u5Np_SZ74OcEbLSNFOv2UAdcECGWE_nv7w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/tenants/property/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tenants",
+						"property",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get total rental income of all occupied properties.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4NDQxMCwiZXhwIjoxNzAyNDg1MDEwfQ.j8Kvj-NQxqMxcmjk0iMNYVixQvZEK63jAiIq820FXHhytl1GuwU-144Fi-zPxtRPoK8XMJmuuRbbZydVDYWB-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/properties/total-rental-income",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"properties",
+						"total-rental-income"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a new tenant to a property subject to capacity restriction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MjI1OCwiZXhwIjoxNzAyNDgyODU4fQ.iu6bznpJz19yMohQHamRXspMhzL3EwI5OVMKJasTBCqYFJpLtCp56ZEykKxb2xs6vnUo4pbfU00LHZqKQu1aLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Jaydeep\",\n    \"email\" : \"teset@test.com\",\n    \"phoneNumber\" : \"1234567890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/tenants/add/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tenants",
+						"add",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a tenant",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MjU5NCwiZXhwIjoxNzAyNDgzMTk0fQ.KAvhcbCyDApqSuuqE2YpllVv91iQOgf9j-WZDun5Dp1MNI-DLfEiLIMajVEMMBURs8ReXiLwq7Fx8uggry8Dfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/tenants/tenant12@example.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tenants",
+						"tenant12@example.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a property and delete the associated tenants",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MjU5NCwiZXhwIjoxNzAyNDgzMTk0fQ.KAvhcbCyDApqSuuqE2YpllVv91iQOgf9j-WZDun5Dp1MNI-DLfEiLIMajVEMMBURs8ReXiLwq7Fx8uggry8Dfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/properties/delete/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"properties",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "move a tenant from one property to another subject to capacity restriction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MjU5NCwiZXhwIjoxNzAyNDgzMTk0fQ.KAvhcbCyDApqSuuqE2YpllVv91iQOgf9j-WZDun5Dp1MNI-DLfEiLIMajVEMMBURs8ReXiLwq7Fx8uggry8Dfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/tenants/move-to-property/tenant32@example.com/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"tenants",
+						"move-to-property",
+						"tenant32@example.com",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change the rental rate of a property",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MjU5NCwiZXhwIjoxNzAyNDgzMTk0fQ.KAvhcbCyDApqSuuqE2YpllVv91iQOgf9j-WZDun5Dp1MNI-DLfEiLIMajVEMMBURs8ReXiLwq7Fx8uggry8Dfg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/properties/change-rental-rate/3/2300",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"properties",
+						"change-rental-rate",
+						"3",
+						"2300"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProperties - graphql",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\n    allProperties{\n        id\n        capacity\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPropertyById - graphql",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\n    getPropertyById(id:3)\n    {\n        address\n        id\n        tenants\n        {\n            name\n            email\n        }\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-tenant-graphql",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    addTenant(id:3,input:\n    {\n        name:\"jhgm\",\n        email:\"yogesh17999@gmail.com\"\n        phoneNumber:\"1234567890\"\n    })\n    {\n        name\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete property - graphql",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\n    deleteProperty(id:2)\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjQ4MjI1OCwiZXhwIjoxNzAyNDgyODU4fQ.iu6bznpJz19yMohQHamRXspMhzL3EwI5OVMKJasTBCqYFJpLtCp56ZEykKxb2xs6vnUo4pbfU00LHZqKQu1aLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"Password123\",\n  \"locked\": false,\n  \"role\": {\n    \"roleName\": \"Manager\"\n  },\n  \"phoneNumber\": \"+1234567890\",\n  \"ppsn\": \"ABC123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/users/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"users",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test@gmail.com\",\n    \"password\":\"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/users/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"users",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
