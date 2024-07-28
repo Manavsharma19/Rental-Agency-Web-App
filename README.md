@@ -1,4 +1,4 @@
-**A rental agency manages properties near MTU's Bishopstown campus. which are rented to students.**
+**A rental agency web app that manages properties near MTU's Bishopstown campus. which are rented to students.**
 
 The rental agency records the following data about each property:
 
